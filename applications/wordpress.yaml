@@ -15,14 +15,14 @@ spec:
         image:
           registry: docker.io
           repository: bitnami/wordpress
-          tag: 6.3.2-debian-11
+          tag: 6.3.2
         service:
           type: LoadBalancer
         persistence:
           enabled: false
         mariadb:
           image:
-            tag: 11.1.2-debian-11
+            tag: 11.1.2
           primary:
             persistence:
               enabled: false
