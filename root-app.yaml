@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/uvegesi/eks-wp-gitops.git
     targetRevision: main
-    path: .
+    path: applications
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
@@ -16,3 +16,6 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+
