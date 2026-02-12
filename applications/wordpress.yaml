@@ -14,9 +14,8 @@ spec:
       values: |
         service:
           type: LoadBalancer
-        wordpress:
-          persistence:
-            enabled: false
+        persistence:
+          enabled: false
         mariadb:
           primary:
             persistence:
