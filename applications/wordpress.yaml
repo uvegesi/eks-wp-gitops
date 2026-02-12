@@ -14,6 +14,13 @@ spec:
       values: |
         service:
           type: LoadBalancer
+        resources:
+          requests:
+            memory: 256Mi
+            cpu: 200m
+          limits:
+            memory: 512Mi
+            cpu: 300m
 
   destination:
     server: https://kubernetes.default.svc
@@ -25,11 +32,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-  resources:
-    requests:
-      memory: 256Mi
-      cpu: 200m
-    limits:
-      memory: 512Mi
-      cpu: 300m
 
