@@ -12,11 +12,17 @@ spec:
     targetRevision: 18.0.6
     helm:
       values: |
+        image:
+          registry: docker.io
+          repository: bitnami/wordpress
+          tag: 6.3.2-debian-11
         service:
           type: LoadBalancer
         persistence:
           enabled: false
         mariadb:
+          image:
+            tag: 11.1.2-debian-11
           primary:
             persistence:
               enabled: false
