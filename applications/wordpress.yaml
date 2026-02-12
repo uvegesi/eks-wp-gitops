@@ -14,13 +14,21 @@ spec:
       values: |
         service:
           type: LoadBalancer
+        wordpress:
+          persistence:
+            enabled: false
+        mariadb:
+          primary:
+            persistence:
+              enabled: false
         resources:
           requests:
-            cpu: 50m
-            memory: 128Mi
+            cpu: 100m      # DB needs more CPU than PHP
+            memory: 256Mi  # DB needs more memory for caching
           limits:
-            cpu: 100m
-            memory: 256Mi
+            cpu: 200m
+            memory: 512Mi
+
   destination:
     server: https://kubernetes.default.svc
     namespace: wordpress
